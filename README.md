@@ -78,7 +78,7 @@ public class TestSystem : IEcsInitSystem {
 Действия (классы `xxxAction`) - это `MonoBehaviour`-компоненты, которые слушают события uGui виджетов, ищут `EcsUiEmitter` по иерархии вверх и вызывают генерацию соответствующих событий для ECS-мира.
 
 ## Компоненты
-ECS-компоненты, описывающие события: `EcsUiClickEvent`, `EcsUiBeginDragEvent`, `EcsUiEndDragEvent` and others - they can be used as ecs-components with standard filtering through `EcsFilter`:
+ECS-компоненты, описывающие события: `EcsUiClickEvent`, `EcsUiBeginDragEvent`, `EcsUiEndDragEvent` и т.д. - все они являются стандартными ECS-компонентами и могут быть отфильтрованы с помощью `EcsFilter`:
 ```c#
 public class TestUiClickEventSystem : IEcsRunSystem {
     EcsWorld _world;
