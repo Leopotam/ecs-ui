@@ -14,6 +14,7 @@
     * [Компоненты](#Компоненты)
 * [Инициализация](#Инициализация)
 * [Лицензия](#Лицензия)
+* [ЧаВо](#ЧаВо)
 
 # Социальные ресурсы
 [![discord](https://img.shields.io/discord/404358247621853185.svg?label=enter%20to%20discord%20server&style=for-the-badge&logo=discord)](https://discord.gg/5GZVde6)
@@ -78,7 +79,7 @@ public class TestSystem : IEcsInitSystem {
 Действия (классы `xxxAction`) - это `MonoBehaviour`-компоненты, которые слушают события uGui виджетов, ищут `EcsUiEmitter` по иерархии вверх и вызывают генерацию соответствующих событий для ECS-мира.
 
 ## Компоненты
-ECS-компоненты, описывающие события: `EcsUiClickEvent`, `EcsUiBeginDragEvent`, `EcsUiEndDragEvent` and others - they can be used as ecs-components with standard filtering through `EcsFilter`:
+ECS-компоненты, описывающие события: `EcsUiClickEvent`, `EcsUiBeginDragEvent`, `EcsUiEndDragEvent` и т.д. - все они являются стандартными ECS-компонентами и могут быть отфильтрованы с помощью `EcsFilter`:
 ```c#
 public class TestUiClickEventSystem : IEcsRunSystem {
     EcsWorld _world;
@@ -98,3 +99,9 @@ public class TestUiClickEventSystem : IEcsRunSystem {
 
 В случаях лицензирования по условиям MIT-Red не стоит расчитывать на
 персональные консультации или какие-либо гарантии.
+
+# ЧаВо
+
+## Действие срабатывает на штатных виджетах uGui даже если у них отключен флаг интерактивности. Как это исправить?
+
+У каждого действия в инспекторе есть отдельное поле `Selectable`, достаточно подключить в это поле виджет, чья активность должна учитываться при генерации событий.
