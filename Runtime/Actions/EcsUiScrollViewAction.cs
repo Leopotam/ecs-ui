@@ -15,7 +15,8 @@ namespace Leopotam.Ecs.Ui.Actions {
     public sealed class EcsUiScrollViewAction : EcsUiActionBase {
         ScrollRect _scrollView;
 
-        void Awake () {
+        protected override void Awake () {
+            base.Awake ();
             _scrollView = GetComponent<ScrollRect> ();
             _scrollView.onValueChanged.AddListener (OnScrollViewValueChanged);
         }

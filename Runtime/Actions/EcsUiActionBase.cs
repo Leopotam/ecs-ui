@@ -31,7 +31,7 @@ namespace Leopotam.Ecs.Ui.Actions {
 
         [SerializeField] UnityEngine.UI.Selectable _selectable = null;
 
-        void Awake () {
+        protected virtual void Awake () {
             if (_nameRegistrationType == EcsUiActionNameRegistrationType.OnAwake) {
                 ValidateEmitter ();
                 RegisterName (true);
