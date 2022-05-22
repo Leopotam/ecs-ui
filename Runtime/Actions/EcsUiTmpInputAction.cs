@@ -15,7 +15,8 @@ namespace Leopotam.Ecs.Ui.Actions {
     public sealed class EcsUiTmpInputAction : EcsUiActionBase {
         TMP_InputField _input;
 
-        void Awake () {
+        protected override void Awake () {
+            base.Awake ();
             _input = GetComponent<TMP_InputField> ();
             _input.onValueChanged.AddListener (OnInputValueChanged);
             _input.onEndEdit.AddListener (OnInputEnded);

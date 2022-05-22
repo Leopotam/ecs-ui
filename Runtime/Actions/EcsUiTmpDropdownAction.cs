@@ -15,7 +15,8 @@ namespace Leopotam.Ecs.Ui.Actions {
     public sealed class EcsUiTmpDropdownAction : EcsUiActionBase {
         TMP_Dropdown _dropdown;
 
-        void Awake () {
+        protected override void Awake () {
+            base.Awake ();
             _dropdown = GetComponent<TMP_Dropdown> ();
             _dropdown.onValueChanged.AddListener (OnDropdownValueChanged);
         }

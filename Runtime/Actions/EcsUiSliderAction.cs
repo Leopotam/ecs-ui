@@ -15,7 +15,8 @@ namespace Leopotam.Ecs.Ui.Actions {
     public sealed class EcsUiSliderAction : EcsUiActionBase {
         Slider _slider;
 
-        void Awake () {
+        protected override void Awake () {
+            base.Awake ();
             _slider = GetComponent<Slider> ();
             _slider.onValueChanged.AddListener (OnSliderValueChanged);
         }
